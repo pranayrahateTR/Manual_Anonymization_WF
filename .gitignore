@@ -83,8 +83,14 @@ desktop.ini
 *.sqlite3
 
 # Excel Data Files (contain credentials - DO NOT COMMIT)
-exceldata/
+# Block all Excel files first
 *.xlsx
+
+# Block exceldata folder contents but allow the folder itself
+exceldata/*
+
+# Exception: Allow safe test data file
+!exceldata/Binderdetails.xlsx
 
 # API JSON Files (contain credentials - DO NOT COMMIT)
 Anonymization_api/login.json
