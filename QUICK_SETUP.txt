@@ -1,0 +1,8 @@
+SETUP:
+1. git clone <repo-url> && cd Anonymization-Test-Automation
+2. python -m venv venv && venv\Scripts\activate
+3. copy .env.example .env (add real credentials)
+4. pip install -r requirements.txt && playwright install
+5. pytest
+
+⚠️ Never commit .env file! See SETUP_GUIDE.txt for details.
