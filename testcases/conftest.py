@@ -100,20 +100,21 @@ def capture_screenshot_on_failure(request, page):
             os.makedirs("screenshot", exist_ok=True)
 
             # Get test class and method name
-            test_name = item.name
+            # Remove parameters from test name to avoid exposing credentials
+            test_name = item.name.split('[')[0] if '[' in item.name else item.name
             test_class = item.parent.name if hasattr(item.parent, 'name') else "NoClass"
 
             # Generate timestamp
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-            # Create filename: ClassName_MethodName_Timestamp.png
+            # Create filename: ClassName_MethodName_Timestamp.png (no parameters)
             screenshot_filename = f"{test_class}_{test_name}_{timestamp}.png"
             screenshot_path = os.path.join("screenshot", screenshot_filename)
 
             # Take screenshot
             screenshot_data = page.screenshot(path=screenshot_path, full_page=True)
 
-            # Attach to Allure report
+            # Attach to Allure report (using sanitized test name without credentials)
             allure.attach(screenshot_data, name=f"failure_{test_name}_{timestamp}",
                           attachment_type=allure.attachment_type.PNG)
 
