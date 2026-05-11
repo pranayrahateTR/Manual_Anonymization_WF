@@ -1,0 +1,99 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDE - PyCharm
+.idea/
+*.iml
+*.iws
+
+# IDE - VSCode
+.vscode/
+
+# Claude Code
+.claude/
+
+# Testing
+.pytest_cache/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+*.cover
+.hypothesis/
+
+# Test Artifacts - Videos, Screenshots, Logs
+allure-results/
+allure-report/
+videos/
+screenshot/
+screenshots/
+logs/
+*.log
+
+# Playwright
+playwright-report/
+test-results/
+
+# OS specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.#*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Excel Data Files (contain credentials - DO NOT COMMIT)
+exceldata/
+*.xlsx
+
+# API JSON Files (contain credentials - DO NOT COMMIT)
+Anonymization_api/login.json
+Anonymization_api/userrole.json
+Anonymization_api/userrole_approver.json
+
+# Documentation Files (contain password examples - DO NOT COMMIT)
+*.md
+
+# Note: Use .env file for credentials instead of Excel/JSON files
+# See .env.example for template
+# API scripts now read from environment variables, not JSON files
