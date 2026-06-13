@@ -44,6 +44,9 @@ class Role_Approver(BasePage):
         print(f"      > Selecting all documents")
         self.click_by_text("An_selectAllcheckbox")
 
+        print(f"      > Selecting ManualAnonymizationRequest")
+        self.click_by_text("An_manualAnonymizationType")
+
         print(f"      > Creating job")
         self.click("An_createJobbtn")
         self.handle_alert()
@@ -75,7 +78,9 @@ class Role_Approver(BasePage):
         return request_guid, Redactor_Role(self.page)
 
     time.sleep(5)
-
+# -------------------------------------------------------
+# After Assigning Request back to Approver from Redactor
+# -------------------------------------------------------
     def approve_job(self,request):
         print(f"\n      ** Approver.approve_job() - Starting approval workflow")
         print(f"      > Using request GUID: {request}")

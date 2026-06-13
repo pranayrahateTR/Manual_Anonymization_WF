@@ -63,7 +63,7 @@ Workflow application using Pytest and Playwright.
 - Playwright (Browser Automation)
 - Allure (Test Reporting)
 - python-dotenv (Environment Management)
-- openpyxl (Excel Data Handling)
+- openpyxl (Excel Data Han3dling)
 
 ================================================================================
   PROJECT STRUCTURE
